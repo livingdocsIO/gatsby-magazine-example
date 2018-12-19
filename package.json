@@ -1,0 +1,50 @@
+{
+  "version": "0.0.0-placeholder",
+  "name": "livingdocs-gatsby-magazine",
+  "description": "Livingdocs used to create a magazine.",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "test": "exit 0",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@livingdocs/node-sdk": "^0.3.1",
+    "gatsby": "^2.0.67",
+    "gatsby-plugin-manifest": "^2.0.12",
+    "gatsby-plugin-react-helmet": "^3.0.4",
+    "gatsby-plugin-robots-txt": "^1.3.0",
+    "gatsby-plugin-sitemap": "^2.0.3",
+    "net": "^1.0.2",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-helmet": "^5.2.0",
+    "react-share": "^2.4.0",
+    "tls": "0.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "release": {
+    "npmPublish": false,
+    "verifyConditions": [
+      "@semantic-release/github"
+    ],
+    "publish": [
+      "@semantic-release/github"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livingdocsIO/livingdocs-gatsby-magazine.git"
+  },
+  "author": "Livingdocs <support@livingdocs.io>",
+  "bugs": {
+    "url": "https://github.com/livingdocsIO/livingdocs-gatsby-magazine/issues"
+  },
+  "homepage": "https://github.com/livingdocsIO/livingdocs-gatsby-magazine#readme"
+}

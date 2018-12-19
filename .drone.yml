@@ -1,0 +1,28 @@
+clone:
+  git:
+    image: plugins/git
+    depth: 50
+    tags: true
+
+pipeline:
+  npm-install:
+    group: install
+    image: node:10-alpine
+    commands: ["npm install"]
+
+  eslint:
+    group: install
+    image: marcbachmann/eslint:5.10.0
+    secrets: [gh_token]
+
+  test:
+    group: test
+    image: node:10-alpine
+    commands: ["npm run test -s"]
+
+  release:
+    group: publish
+    image: marcbachmann/semantic-release:15.1.3
+    secrets: [gh_token]
+    when:
+      event: push
