@@ -48,17 +48,16 @@ const openGallery = (videoTeaserEl, teaserImageEl, teaserTitleEl) => {
   gallery.init()
 }
 
-const getGalleryOptions = (videoTeaserEl, teaserImageEl) => {
+const getGalleryOptions = teaserImageEl => {
   const options = {
     index: 0,
-    history: true,
-    focus: true,
+    history: false,
+    focus: false,
     zoomEl: false,
     loop: false,
     closeOnScroll: false,
     showAnimationDuration: 333,
-    // galleryUID: videoTeaserEl.getAttribute(data-uuid),
-    getThumbBoundsFn: function (index) {
+    getThumbBoundsFn: () => {
       if (!teaserImageEl) return {}
       const pageYScroll = window.pageYOffset || document.documentElement.scrollTop
       const rect = teaserImageEl.getBoundingClientRect()
