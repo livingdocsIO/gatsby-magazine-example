@@ -74,6 +74,8 @@ const extractImageItems = imageContainerEl => {
 const getGalleryOptions = (galleryTeaserEl, teaserImageEl) => {
   const options = {
     index: 0,
+    history: false,
+    focus: false,
     // galleryUID: galleryTeaserEl.getAttribute('data-uuid'),
     getThumbBoundsFn: function (index) {
       if (!teaserImageEl) return {}
