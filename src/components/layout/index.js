@@ -6,8 +6,8 @@ import Footer from '../footer'
 import favicon from '../resources/favicon.png'
 import css from '../resources/living-times014.css'
 import {metadata} from '../../../config.js'
-import {initiateVideoTeasers} from '../resources/initVideoTeasers'
-import {initiateGalleryTeasers} from '../resources/initGalleryTeasers'
+import {initiateVideoTeasers} from '../helpers/initVideoTeasers'
+import {initiateGalleryTeasers} from '../helpers/initGalleryTeasers'
 
 // Set a basic set of SEO data
 // articles and author-pages will over overwrite some of them
