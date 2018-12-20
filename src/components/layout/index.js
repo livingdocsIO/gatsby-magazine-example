@@ -6,6 +6,8 @@ import Footer from '../footer'
 import favicon from '../resources/favicon.png'
 import css from '../resources/living-times014.css'
 import {metadata} from '../../../config.js'
+import {initiateVideoTeasers} from '../../templates/pages/videoTeasers'
+import {initiateGalleryTeasers} from '../../templates/pages/galleryTeasers'
 
 // Set a basic set of SEO data
 // articles and author-pages will over overwrite some of them
@@ -15,6 +17,10 @@ class Layout extends React.Component {
     // Livingdocs will send a bunch of <a/> tags, we will addEventListeners for those.
     // We don't want to reload the page performance and parts of the cache
     // that's why we swap out the <a/> behaviour with the gatsby "navigate"
+
+    initiateVideoTeasers()
+    initiateGalleryTeasers()
+
     for (const x of document.body.getElementsByTagName('a')) {
       x.addEventListener('click', this.handleClick)
     }
