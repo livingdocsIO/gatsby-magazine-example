@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import Layout from '../components/layout'
-import AdExclusive from '../components/header/AdExclusive'
+import AdExclusive from '../components/header/adExclusive'
 import {Twitter, Facebook, Basic} from '../components/SEO'
 import {metadata} from '../../config'
 
