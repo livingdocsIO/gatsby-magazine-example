@@ -1,55 +1,52 @@
-## TODO:
+## About the Livingdocs-gatsby-magazine
 
-- brush up the README.md
-- add Video / Photo-gallery
-- footer has a 2px error because of borderTop, will solve that soon
+This magazine-starter is supposed to help you start out with Livingdocs as a headless CMS.<br/> We assume you haven't set up any custom configuration and use our magazine-component library.
 
 ## See it in action:
 
 [Gatsby-magazine example](https://jovial-shaw-3479ee.netlify.com/)
 
-## About the livingdocs-gatsby-magazine
-
-This magazine-starter is supposed to help you starting out with Livingdocs as a headless CMS. We assume you haven't set up any custom configurations and use our magazine-component library.
-
 ## Quick start
 
 1.  **Clone this repo**
 
-    Start by cloning this repository and installing the dependencies.
+    Start by cloning this repository and installing the dependencies. <br/>
+    This has been tested with Node 8.12.0, later
 
     ```
     git clone
+    cd gatsby-magazine-example
     npm install
     ```
 
 2.  **Use your own API Key**
 
-    in the root of your folder in `gatsby-config.js`, you'll have to swap out _yourToken_
-    You can find your token here: URL
+    in the root of your folder in `Gatsby-config.js`, you'll have to swap out _process.env.accessToken_ for your Livingdocs API-Token.
+    You can find your token [here](https://edit.livingdocs.io/access/124/public-api).
 
 
     ```js
     plugins: [
       {
-        resolve: 'gatsby-source-livingdocs',
+        resolve: 'gatsby-source-Livingdocs',
         options: {
           // optional, limit: default 10, max 100
           limit: 100,
-          accessToken: "accessToken"
+          // The accessToken is accessed at buildtime.
+          // In this example we used "netlify" and set our Token there.
+          accessToken: process.env.accessToken
         }
       }
     ]
     ```
 
-    _In a nutshell, the Livingdocs plugin will get the data and from the json that is returned, the graphQL schema will be created at build time. You can read more about the plugin here_
+    _In a nutshell, the Livingdocs plugin will get the data and from the JSON that is returned, the graphQL schema will be created at build time. You can read more about the plugin here_
 
-3.  **Open the source code and start editing the project locally!**
+3.  **Start editing the project locally!**
 
     Navigate into your new site’s directory and start the project.
 
     ```
-    cd livingdocs-gatsby-magazine/
     gatsby develop
     ```
 
@@ -66,70 +63,99 @@ This magazine-starter is supposed to help you starting out with Livingdocs as a 
 
 ## Where to go from here
 
-1.  **Remove our branding, and use your own**
-
-    The following folders and files are going to be interesting starting points
+1.  **Interesting starting points**
 
          ├── src
            ├── components
-             ├── footer | contains livingdocs links
-             ├── header | contains livingdocs branding
-             ├── layout | contains all SEO data (some specific to livingdocs)
+             ├── footer | contains Livingdocs links
+             ├── header | contains Livingdocs branding
+             ├── layout | contains all SEO data (some specific to Livingdocs)
              ├── resources
-               ├── favicon.png | the livingdocs favicon
                ├── living-times014.css
            ├── pages
-             ├── 404.js | Our 404 starter-page
+             ├── 404.js   |  404 starter-page
              ├── index.js | Homepage / initial route
+           ├── templates
+             ├── article.js     | Creates the article pages in gatsby-node.js
+             ├── authorPage.js  | Creates the author pages in gatsby-node.js
+             ├── pages.js       | Creates the pages in gatsby-node.js
          ├── gatsby-config.js
-         ├── gatsby-node.js | all articles and authorPages are created here
+         ├── gatsby-node.js     | Pages are created programmatically here
 
-2) **Plugin overview**
+2.  **Plugin overview**
 
-We've added plugins that should be included in our opinion. We will shortly go over which plugins were used.
+    We've added plugins that should be included in our opinion. We will shortly go over which plugins were used.
 
-_All plugins can be found in gatsby-config.js_
+    _All plugins can be found in gatsby-config.js_
 
-**gatsby-source-livingdocs**
-Used to request the data from Livingdocs, afterwards used in _gatsby-node.js_ to programmatically create the pages
+    **gatsby-source-Livingdocs**
+    Used to request the data from Livingdocs, afterwards used in _gatsby-node.js_ to programmatically create the pages
 
----
+    ***
 
-**gatsby-plugin-react-helmet**
-Creates the <head> with metadata, css, social media headers, etc.
+    **gatsby-plugin-react-helmet**
+    Creates the <head> with metadata, css, social media headers, etc.
 
-**gatsby-plugin-sitemap**
-Creates the sitemap, which can be accessed here:
-`http://localhost:8000/sitemap.xml`
+    **gatsby-plugin-sitemap**
+    Creates the sitemap, which can be accessed here:
+    `http://localhost:8000/sitemap.xml`
 
-**gatsby-plugin-robots-txt**
-Creates the robot.txt file, which can be seen here:
-`http://localhost:8000/robots.txt`
+    **gatsby-plugin-robots-txt**
+    Creates the robot.txt file, which can be seen here:
+    `http://localhost:8000/robots.txt`
 
-**gatsby-plugin-manifest**
-Creates the PWA-Manifest
+    **gatsby-plugin-manifest**
+    Creates the PWA-Manifest
 
-**gatsby-plugin-offline**
-This is helps making your magazine / website accessible, even without internet connection
+    <br/>
 
-3. **This magazine in combination with Livingdocs**
+3.  **This magazine in combination with Livingdocs**
 
-Weather you're an author, or a developer trying to understand what's going on so here are some key features:
+    Whether you're an author, or a developer trying to understand what's going on so here are some key features:
 
-**A meaningful title in Livingdocs**
-This will be crucial for SEO reasons. Under the hood
+    **A meaningful title in Livingdocs**
+    This will be crucial for SEO reasons. Under the hood
 
-    ├── src
-      ├── components
-        ├── layout.js
-      ├── templates
-        ├── article.js
+        ├── src
+          ├── components
+            ├── layout.js
+          ├── templates
+            ├── article.js
 
-The layout & article components will set up all the neccessary data for google, facebook, twitter within the <head> component.
+    The layout & article components will set up all the necessary data for google, facebook, twitter within the <head> component.
 
-So having meaningful `titles, descriptions, keywords` are very important, for the user to find the content.
+    So having meaningful `titles, descriptions, keywords` are very important, for the user to find the content.
 
-The good part? We've done lots of research regarding SEO for you. Thus, you can focus on using livingdocs and a good part of the technical implementation has been already done for you, if you use our starterkits.
+    The good part? We've done lots of research regarding SEO for you. Thus, you can focus on using Livingdocs and a good part of the technical implementation has been already done for you, if you use our starter kits.
+
+# Deployment
+
+1.  **Deploy locally**
+
+    Deploying locally is really easy.
+
+    ```
+    gatsby build
+    gatsby serve
+    ```
+
+    You should be able to find your locally-deployed website here: http://localhost:9000/
+
+<br/>
+
+2.  **Deploy to online services. Example: Netlify**
+
+
+    _Deployment isn't limited to Netlify. This works as well with services such as zeit.co/now or your favorite service. We currently are working on Webhooks, so you can redeploy after writing a new article. <br/> Also incremental builds are possible for Enterprise customers. Please get in touch, if that's a crucial feature._
+
+
+
+    #### Quick deployment:
+    Drop your **public** folder onto Netlify. _Tada, your website is live._
+
+
+    #### Standard deployment
+     Connect your Github/Gitlab repository and automatically re-deploy on new commits. <br/>We are working on Webhooks and incremental build-processes for the public, stay tuned.
 
 ## 🎓 Learning Gatsby
 
@@ -138,7 +164,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
