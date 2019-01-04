@@ -19,18 +19,20 @@ class Layout extends React.Component {
 
     // @TODO This is a hacky approach.
     // Livingdocs will send a bunch of <a/> tags, we will addEventListeners for those.
-    // We don't want to reload the page performance and parts of the cache
-    // that's why we swap out the <a/> behaviour with the gatsby "navigate"
-    for (const x of document.body.getElementsByTagName('a')) {
-      x.addEventListener('click', this.handleClick)
+    // We don't want to reload the page, because we lose a big chunk of performance.
+    // that's why we swap out the <a/> behaviour with the gatsby "navigate", for internal links.
+    for (const anchorTag of document.body.getElementsByTagName('a')) {
+      this.internalLink(anchorTag) && anchorTag.addEventListener('click', this.handleClick)
     }
   }
   // remove event listerns for all <a> tags
   componentWillUnmount () {
-    for (const x of document.body.getElementsByTagName('a')) {
-      x.removeEventListener('click', this.handleClick)
+    for (const anchorTag of document.body.getElementsByTagName('a')) {
+      this.internalLink(anchorTag) && anchorTag.removeEventListener('click', this.handleClick)
     }
   }
+
+  internalLink = link => link.host === window.location.host
 
   handleClick = event => {
     event.preventDefault()
