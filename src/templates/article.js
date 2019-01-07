@@ -22,15 +22,7 @@ const article = props => {
   return (
     <Layout>
       {/* SEO start, information for the html <head></head> */}
-      <Basic
-        scripts={
-          // embed twitter script in the <head></head> if it exists
-          props.data.publications.publication.metadata.dependencies.js &&
-          props.data.publications.publication.metadata.dependencies.js[0].code
-        }
-        title={title}
-        description={description}
-      />
+      <Basic title={title} description={description} />
       <Twitter title={title} description={description} url={url} />
       <Facebook title={title} description={description} url={url} />
       {/* SEO end, information for the html <head></head> */}
@@ -50,11 +42,6 @@ export const query = graphql`
           authors {
             references {
               id
-            }
-          }
-          dependencies {
-            js {
-              code
             }
           }
           title
