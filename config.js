@@ -8,5 +8,5 @@ export const metadata = {
   Demo Magazine in Node.js to start with. Check it out!`,
   facebookId: 'fb:page_id',
   twitterId: 'twitter:account_id',
-  url: 'https://www.living-times.com/'
+  url: 'https://www.living-times.com'
 }
