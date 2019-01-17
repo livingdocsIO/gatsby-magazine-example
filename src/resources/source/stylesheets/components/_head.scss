@@ -1,0 +1,80 @@
+// ------------------------------------
+// HEAD COMPONENT
+// ------------------------------------
+
+// Styles for the following component:
+// -> source/components/headers/head.html
+
+.head {
+  margin-bottom: double($base-spacing-unit);
+}
+
+.head__flag {
+  font-weight: bold;
+  color: $flag-color;
+  text-transform: uppercase;
+  @include font-size($micro-size); // 13px
+}
+
+.head__title {
+  margin-bottom: halve($base-spacing-unit);
+
+  font-family: $serif-font;
+  @include font-size($beta-size, false); // 45px
+}
+
+.head__lead {
+  @include font-size($zeta-size, false); // 22px
+}
+
+.head__meta {
+  position: relative;
+
+  color: $secondary-color;
+
+  &::after {
+    left: 0;
+    position: absolute;
+    top: halve(-$base-spacing-unit);
+
+    height: 2px;
+    width: 3 * $base-spacing-unit;
+
+    background-color: $divider-color;
+
+    content: '';
+  }
+}
+
+.head__flag, .head__meta {
+  display: block;
+}
+
+// Media Queries
+
+@media (max-width: 930px) {
+  .head__title {
+    @include font-size($gamma-size, false); // 45px
+  }
+  .head__lead {
+    @include font-size(20px, false); // 22px
+  }
+}
+
+@media (max-width: $mq-small) {
+  .head__title {
+    @include font-size($delta-size, false); // 45px
+  }
+  .head__lead {
+    @include font-size(18px, false); // 22px
+  }
+}
+
+@media (max-width: $mq-extra-small) {
+  .head__title {
+    @include font-size($epsilon-size, false); // 45px
+  }
+  .head__lead {
+    @include font-size($base-font-size, false); // 22px
+  }
+}

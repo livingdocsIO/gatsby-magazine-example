@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// SEPERATOR COMPONENT
+// -----------------------------------------------------------------------------
+
+// Styles for the following component:
+// -> source/components/text/seperator.html
+
+.separator {
+  border: none;
+  height: 1px;
+  clear: both;
+  margin-left: 33%;
+  margin-right: 33%;
+  padding-top: double($base-spacing-unit);
+  padding-bottom: double($base-spacing-unit);
+
+  &:before {
+    content: '';
+    display: block;
+    border-top: 1px solid $text-color;
+  }
+}

@@ -1,0 +1,258 @@
+// -----------------------------------------------------------------------------
+// TEASER CARD COMPONENT
+// -----------------------------------------------------------------------------
+
+// Styles for the following components:
+// -> source/components/teaser/teaser-card.html
+// -> source/components/teaser/teaser-card-author.html
+// -> source/components/teaser/teaser-card-numbered.html
+// -> source/components/teaser/teaser-card-sidebar.html
+
+.teaser-card {
+  margin-bottom: double($base-spacing-unit);
+}
+
+.teaser-card__figure {
+  position: relative;
+  margin-bottom: halve($base-spacing-unit);
+}
+
+.teaser-card__figure a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.teaser-card__caption {
+  position: absolute;
+  left: halve($base-spacing-unit);
+  bottom: halve($base-spacing-unit);
+
+  padding: 2px 8px;
+
+  color: #fff;
+  @include font-size($mili-size, false);
+
+  border-radius: 2px;
+  background-color: $label-color;
+}
+
+.teaser-card__icon {
+  top: -1px;
+  position: relative;
+
+  width: 24px;
+  height: 24px;
+  max-width: 20px;
+  margin-right: 2px;
+  vertical-align: middle;
+
+  transition: transform 150ms;
+
+  path {
+    fill: $white;
+  }
+}
+
+.teaser-card__flag {
+  display: inline-block;
+  margin-bottom: quarter($base-spacing-unit);
+
+  font-weight: bold;
+  color: $flag-color;
+  letter-spacing: .05em;
+  @include font-size(12px);
+  text-transform: uppercase;
+}
+
+.teaser-card__number {
+  margin-bottom: 10px;
+  font-family: $serif-font;
+  @include font-size($alpha-size, false);
+}
+
+.teaser-card__title {
+  font-family: $serif-font;
+  @include font-size($delta-size, false); // 32px
+  margin-bottom: halve($base-spacing-unit);
+}
+
+.teaser-card__title a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.teaser-card__text {
+  margin-bottom: halve($base-spacing-unit);
+}
+
+.teaser-card__byline {
+  margin-left: 0;
+  margin-bottom: 0;
+
+  color: rgba(0,0,0,.54);
+  @include font-size($mili-size);
+
+  list-style: none;
+  overflow: hidden;
+}
+
+.teaser-card__byline li {
+  display: inline-block;
+  margin-right: quarter($base-spacing-unit);
+
+  &:first-child {
+    font-weight: bold;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.teaser-card__byline li a {
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Hover behaviour
+.teaser-card:hover, .teaser-hero:hover {
+  .teaser-card__icon {
+    transform: scale(1.15);
+  }
+}
+
+// Modifier: Align image right / left
+.teaser-card--left-aligned-img .teaser-card,
+.teaser-card--right-aligned-img .teaser-card {
+  display: flex;
+  align-items: center;
+}
+
+.teaser-card--left-aligned-img .teaser-card__figure,
+.teaser-card--right-aligned-img .teaser-card__figure {
+  width: 40%;
+  margin-bottom: 0;
+}
+
+.teaser-card--left-aligned-img .teaser-card__body,
+.teaser-card--right-aligned-img .teaser-card__body  {
+  flex: 1;
+}
+
+.teaser-card--left-aligned-img .teaser-card__figure {
+  margin-right: halve($base-spacing-unit);
+}
+
+.teaser-card--right-aligned-img .teaser-card__figure {
+  margin-left: 20px;
+  order: 1;
+}
+
+
+// Modifier: Color flag text black
+.teaser-card__flag--black {
+  color: $text-color;
+}
+
+
+// Modifier: Numberer
+.teaser-card--numbered {
+  display: flex;
+  align-items: center;
+}
+
+.teaser-card--numbered .teaser-card__byline {
+  margin-bottom: 0;
+}
+
+.teaser-card--numbered .teaser-card__number {
+  width: 8.33%;
+  margin-right: $base-spacing-unit;
+
+  text-align: center;
+}
+
+.teaser-card--numbered .teaser-card__number::before {
+  counter-increment: section;
+  content: counter(section);
+}
+
+.teaser-card--numbered .teaser-card__body {
+  flex: 1;
+}
+
+
+// Modifier: Author card
+.teaser-card--author {
+  display: flex;
+  align-items: center;
+}
+
+.teaser-card--author .teaser-card__figure {
+  width: 128px;
+  margin-right: $base-spacing-unit;
+
+  text-align: center;
+}
+
+.teaser-card--author .teaser-card__body {
+  flex: 1;
+}
+
+// Modifier: Sidebar Teaser Card
+.teaser-card--sidebar {
+  margin-bottom: $base-spacing-unit;
+}
+
+.placeholder--teaser-sidebar-embed:last-of-type {
+  margin-bottom: double($base-spacing-unit);
+}
+
+.teaser-card--sidebar {
+  .teaser-card__title {
+    @include font-size($zeta-size, false); //22px
+    margin-bottom: quarter($base-spacing-unit);
+  }
+  .teaser-card__byline, .teaser-card__flag {
+    @include font-size(12px, false);
+  }
+}
+
+// Media Queries
+
+@media (max-width: $mq-medium) {
+  .teaser-card__title {
+    @include font-size($epsilon-size, false);
+  }
+
+  .teaser-card--author {
+    flex-direction: column;
+  }
+  .teaser-card--author .teaser-card__body {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: $mq-extra-small) {
+
+  .teaser-card--left-aligned-img,
+  .teaser-card--right-aligned-img {
+    .teaser-card {
+      display: block;
+    }
+
+    .teaser-card__figure {
+      float: right;
+      margin: 38px 0 0 halve($base-spacing-unit);
+
+      max-width: 120px;
+    }
+  }
+
+}

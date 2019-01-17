@@ -1,0 +1,45 @@
+<script type="ld-conf">
+  {
+    "name": "teaser-gallery-hero",
+    "label": "Image Gallery Hero",
+    "description": "Large gallery teaser",
+    "allowedParents": [
+      "article-container",
+      "author-container",
+      "gallery-container",
+      "video-container",
+      "halves-uneven",
+      "halves-article-footer",
+      "halves",
+      "quarter",
+      "thirds",
+      "whole"
+    ],
+    "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_teaser_with_image.svg",
+    "directives": {
+      "teaser": {
+        "service": "teaser",
+        "defaultParams": {
+          "layout": "gallery-hero"
+        },
+        "config": {
+          "search": {
+            "displayFilters": ["documentState", "timeRange"],
+            "defaultQueries": [
+              {"type": "sortBy", "value": "relevance"},
+              {"type": "contentType", "value": "gallery"}
+            ],
+            "emptySearchQueries": [
+              {"type": "sortBy", "value": "-updated_at"},
+              {"type": "contentType", "value": "gallery"}
+            ]
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<div doc-include="teaser" class="placeholder--teaser-gallery">
+  <div class="placeholder__img"></div>
+</div>

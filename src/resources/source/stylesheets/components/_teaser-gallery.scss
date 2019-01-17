@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// TEASER GALLERY COMPONENT
+// -----------------------------------------------------------------------------
+
+// Styles for the following component:
+// -> source/components/teaser/teaser-gallery.html
+
+.teaser-gallery {
+
+  &__images {
+    display: none;
+  }
+
+  .teaser-card {
+    cursor: pointer;
+  }
+
+  .teaser-hero {
+    cursor: pointer;
+  }
+
+}

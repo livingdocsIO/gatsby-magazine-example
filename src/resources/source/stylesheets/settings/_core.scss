@@ -1,0 +1,54 @@
+// -----------------------------------------------------------------------------
+// CORE
+// -----------------------------------------------------------------------------
+
+// Getting fonts from Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Cormorant:700|Libre+Franklin:400,400i,600');
+
+
+// Scale used for defining type sizes:
+// http://www.modularscale.com/?1&em&1.414
+
+
+// Global font settings
+$base-font-size:        16px;
+$base-line-height:      29px;
+$base-text-color:       $text-color;
+
+
+// Font stacks
+$sans-serif-font:       'Libre Franklin', serif;
+$serif-font:            'Cormorant', sans-serif;
+
+
+// Headings sizes
+$heading-size-h1:       63px;
+$heading-size-h2:       45px;
+$heading-size-h3:       39px;
+$heading-size-h4:       31px;
+$heading-size-h5:       28px;
+$heading-size-h6:       22px;
+
+
+// Set up some font size vars for use across the project
+$alpha-size:            $heading-size-h1;
+$beta-size:             $heading-size-h2;
+$gamma-size:            $heading-size-h3;
+$delta-size:            $heading-size-h4;
+$epsilon-size:          $heading-size-h5;
+$zeta-size:             $heading-size-h6;
+
+
+// Small type sizes
+$mili-size:             14px;
+$micro-size:            13px;
+
+
+// Define a base spacing unit that’s based on the on the line-height.
+$base-spacing-unit:     $base-line-height;
+
+
+// Set up vars for mediaqueries
+$mq-medium:             1024px;
+$mq-small:              780px;
+$mq-extra-small:        560px;

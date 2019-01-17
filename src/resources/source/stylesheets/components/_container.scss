@@ -1,0 +1,230 @@
+// -----------------------------------------------------------------------------
+// CONTAINER COMPONENTS
+// -----------------------------------------------------------------------------
+
+// Styles for the following component:
+// -> source/components/containers/halves.html
+// -> source/components/containers/quarter.html
+// -> source/components/containers/thirds.html
+
+.container-grid {
+  @extend %layout;
+}
+
+.container-grid__item {
+  @extend %layout__item;
+}
+
+.container__title {
+  text-align: center;
+  @include font-size($delta-size, false);
+}
+
+
+
+// Modifiers: column widths
+.container--halves .container-grid__item {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.container--thirds .container-grid__item {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+.container--quarter .container-grid__item {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.container--halves-uneven {
+  .container-grid__item:first-child {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .container-grid__item:last-child {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .teaser-card {
+    margin-bottom: $base-spacing-unit;
+  }
+}
+
+// Modifier: Add left and right padding
+.container--breath .container-grid__item {
+  padding-left: calc(8.33% + #{$base-spacing-unit});
+  padding-right: calc(8.33% + #{$base-spacing-unit});
+}
+
+// Modifier: lined container
+.container--lined {
+  position: relative;
+  padding-top: $base-spacing-unit;
+
+  &::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+
+    height: 1px;
+
+    background-color: $divider-color;
+
+    content: " ";
+  }
+}
+
+.container--lined .container-grid__item {
+  position: relative;
+
+  &::after {
+    top: 0;
+    right: -0.5px;
+    position: absolute;
+
+    width: 1px;
+    height: calc(100% - #{$base-spacing-unit});
+
+    background-color: $divider-color;
+
+    content: "";
+  }
+
+  &:last-child::after {
+    background-color: transparent;
+  }
+}
+
+
+// Media Queries
+
+@media (max-width: $mq-medium) {
+
+  .container__title {
+    @include font-size($epsilon-size, false);
+  }
+
+  .container--breath .container-grid__item {
+    padding-left: halve($base-spacing-unit);
+    padding-right: halve($base-spacing-unit);
+  }
+
+  .container--quarter .container-grid__item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .container--lined.container--quarter .container-grid__item:nth-child(even)::after {
+    background-color: transparent;
+  }
+
+  .container--lined.container--quarter .container-grid__item:nth-child(1)::before,
+  .container--lined.container--quarter .container-grid__item:nth-child(2)::before {
+    left: 0;
+    right: 0;
+    bottom: halve($base-spacing-unit);
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: $divider-color;
+
+    content: "";
+  }
+
+  .container--halves-uneven {
+    .container-grid__item:first-child {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
+
+    .container-grid__item:last-child {
+      flex: 0 0 66.33%;
+      max-width: 66.33%;
+    }
+  }
+
+}
+
+@media (max-width: $mq-small) {
+  .container-grid__item {
+    max-width: 100% !important;
+  }
+
+  .container--thirds {
+
+    .container-grid__item {
+      flex-basis: 100%;
+    }
+
+    .teaser-card {
+      display: flex;
+      align-items: center;
+    }
+
+    .teaser-card__figure {
+      width: 40%;
+      margin-right: halve($base-spacing-unit);
+    }
+
+    .teaser-card__body {
+      flex: 1px;
+    }
+  }
+
+  .container--lined.container--thirds .container-grid__item::after {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: $mq-extra-small) {
+  .container__title {
+    @include font-size($zeta-size, false);
+  }
+
+  .container--lined.container--halves-uneven .container-grid__item::after {
+    background-color: transparent;
+  }
+
+  .container--quarter, .container--halves, .container--halves-uneven {
+    .container-grid {
+      flex-wrap: nowrap;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .container--lined.container--quarter .container-grid__item::after,
+  .container--lined.container--quarter .container-grid__item::before {
+    background-color: transparent !important;
+  }
+
+  .container--quarter {
+    .teaser-card {
+      display: flex;
+      align-items: center;
+    }
+
+    .teaser-card__body {
+      flex: 1;
+    }
+  }
+
+  .container--thirds, .container--quarter {
+    .teaser-card {
+      display: block;
+    }
+
+    .teaser-card__figure {
+      float: right;
+      margin: 38px 0 0 halve($base-spacing-unit);
+
+      max-width: 120px;
+    }
+  }
+}

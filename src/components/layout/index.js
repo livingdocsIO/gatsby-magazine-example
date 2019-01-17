@@ -3,8 +3,8 @@ import {navigate} from 'gatsby'
 import Helmet from 'react-helmet'
 import Header from '../header'
 import Footer from '../footer'
-import favicon from '../resources/favicon.png'
-import css from '../resources/living-times014.css'
+import favicon from '../../resources/favicon.png'
+import '../../resources/source/stylesheets/living-times.scss'
 import {metadata} from '../../../config.js'
 import {initiateVideoTeasers} from '../helpers/initVideoTeasers'
 import {initiateGalleryTeasers} from '../helpers/initGalleryTeasers'
@@ -55,7 +55,7 @@ class Layout extends React.Component {
           <meta property={metadata.twitterId} content="id" />
 
           <link title="timeline-styles" rel="shortcut icon" type="image/png" href={favicon} />
-          <link title="timeline-styles" type="text/css" href={css.toString()} />
+          {/* <link title="timeline-styles" type="text/css" href={css.toString()} /> */}
           <noscript>Please enable Javascript</noscript>
         </Helmet>
         <Header />

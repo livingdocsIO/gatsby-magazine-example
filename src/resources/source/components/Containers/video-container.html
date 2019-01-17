@@ -1,0 +1,36 @@
+<script type="ld-conf">
+  {
+    "name": "video-container",
+    "label": "Video Container",
+    "description": "Teaser image and video embed",
+    "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_1_column.svg",
+    "directives": {
+      "image": {
+        "allowedChildren": [
+          "image"
+        ],
+        "defaultComponents": {
+          "paragraph": "paragraph",
+          "image": "image",
+          "html": "free-html"
+        }
+      },
+      "video": {
+        "allowedChildren": [
+          "free-html",
+          "iframe"
+        ],
+        "defaultComponents": {
+          "paragraph": "paragraph",
+          "image": "image",
+          "html": "free-html"
+        }
+      }
+    }
+  }
+</script>
+
+<div class="video-container">
+  <div class="content-image" doc-container="image"></div>
+  <div class="content-video" doc-container="video"></div>
+</div>

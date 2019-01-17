@@ -1,0 +1,137 @@
+// -----------------------------------------------------------------------------
+// TEASER HERO COMPONENT
+// -----------------------------------------------------------------------------
+
+// Styles for the following component:
+// -> source/components/teaser/teaser-hero.html
+
+.teaser-hero {
+  margin-bottom: $base-spacing-unit;
+}
+
+.teaser-hero > a {
+  text-decoration: none;
+}
+
+.teaser-hero__header:hover .teaser-hero__title {
+  text-decoration: underline;
+}
+
+.teaser-hero__header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 0;
+  padding: 36.25% 0 20%;
+  margin-bottom: halve($base-spacing-unit);
+
+  background-size: cover;
+  background-position: top center;
+  // background-image: url("http://bit.ly/2xaDZnv");
+}
+
+
+.teaser-hero__header-text {
+  max-width: 60%;
+}
+
+.teaser-hero__flag {
+  display: inline-block;
+  padding-right: quarter($base-spacing-unit);
+  padding-left: quarter($base-spacing-unit);
+  margin-bottom: quarter($base-spacing-unit);
+
+  font-weight: bold;
+  color: $flag-color;
+  text-transform: uppercase;
+  @include font-size($micro-size, false);
+
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.teaser-hero__title {
+  margin-bottom: 0;
+
+  color: #fff;
+  font-weight: bold;
+  @include font-size($delta-size, false);
+}
+
+.teaser-hero__label {
+  @extend .teaser-card__caption;
+}
+
+.teaser-hero__icon {
+  @extend .teaser-card__icon;
+}
+
+.teaser-hero__title, .teaser-hero__catchline {
+  text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+}
+
+.teaser-hero__text {
+  margin-bottom: halve($base-spacing-unit);
+}
+
+.teaser-hero__byline {
+  margin-left: 0;
+  margin-bottom: 0;
+
+  color: $secondary-color;
+  @include font-size($mili-size);
+}
+
+.teaser-hero__byline li {
+  display: inline-block;
+  margin-right: quarter($base-spacing-unit);
+
+  &:first-child {
+    font-weight: bold;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+// Modifier: Video + gallery hero
+.teaser-hero--video .teaser-hero__header,
+.teaser-hero--gallery .teaser-hero__header {
+  padding-top: 28.125%;
+  padding-bottom: 28.125%;
+}
+
+// Modifier
+@media (max-width: $mq-medium) {
+  .teaser-hero__header-text {
+    max-width: 80%;
+  }
+
+  .teaser-hero__title {
+    @include font-size($epsilon-size, false);
+  }
+}
+
+@media (max-width: $mq-extra-small) {
+  .teaser-hero__title {
+    @include font-size($zeta-size);
+  }
+
+  .teaser-hero__header {
+    padding-top: 28.125%;
+    padding-bottom: 28.125%;
+  }
+
+}

@@ -1,0 +1,45 @@
+<script type="ld-conf">
+  {
+    "name": "teaser-video-hero",
+    "label": "Video Hero",
+    "allowedParents": [
+      "article-container",
+      "author-container",
+      "gallery-container",
+      "video-container",
+      "halves-uneven",
+      "halves-article-footer",
+      "halves",
+      "quarter",
+      "thirds",
+      "whole"
+    ],
+    "description": "Large teaser with a video",
+    "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_video.svg",
+    "directives": {
+      "teaser": {
+        "service": "teaser",
+        "defaultParams": {
+          "layout": "video-hero"
+        },
+        "config": {
+          "search": {
+            "displayFilters": ["documentState", "timeRange"],
+            "defaultQueries": [
+              {"type": "sortBy", "value": "relevance"},
+              {"type": "contentType", "value": "video"}
+            ],
+            "emptySearchQueries": [
+              {"type": "sortBy", "value": "-updated_at"},
+              {"type": "contentType", "value": "video"}
+            ]
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<div doc-include="teaser" class="placeholder--teaser-video">
+  <div class="placeholder__img"></div>
+</div>

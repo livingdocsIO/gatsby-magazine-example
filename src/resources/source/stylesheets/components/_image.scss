@@ -1,0 +1,44 @@
+// ------------------------------------
+// IMAGE COMPONENT
+// ------------------------------------
+
+// Styles for the following component:
+// -> source/components/images/image.html
+
+.image {
+  margin-bottom: halve($base-spacing-unit);
+}
+
+.image > img {
+  margin-bottom: quarter($base-spacing-unit);
+}
+
+.image__caption {
+  color: $secondary-color;
+  @include font-size($mili-size); // 14px
+}
+
+
+// Modifier
+.image--left, .image--right {
+  max-width: 180px;
+}
+
+.image--left {
+  float: left;
+  margin-right: $base-spacing-unit;
+}
+
+.image--right {
+  float: right;
+  margin-left: $base-spacing-unit;
+}
+
+// Media Queries
+@media (max-width: $mq-small) {
+  .image--left, .image--right {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

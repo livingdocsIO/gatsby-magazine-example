@@ -1,0 +1,615 @@
+{
+  "name": "living-times",
+  "label": "Living Times",
+  "version": "0.0.19",
+  "license": "Copyright (c) 2018 Livingdocs AG, all rights reserved",
+
+  "assets": {
+    "basePath": "https://cdn.livingdocs.io/designs/living-times/0.0.14",
+    "css": ["./styles.css"],
+    "js": ["./scripts.js"]
+  },
+
+  "componentProperties": {
+
+    "selected-menu": {
+      "label": "Selected Menu Item",
+      "type": "option",
+      "value": "is-selected"
+    },
+
+    "position": {
+      "label": "Position",
+      "type": "select",
+      "options": [
+        {
+          "caption": "Middle"
+        },
+        {
+          "caption": "Left",
+          "value": "left"
+        },
+        {
+          "caption": "Right",
+          "value": "right"
+        }
+      ]
+    },
+
+    "image-position": {
+      "label": "Position",
+      "type": "select",
+      "options": [
+        {
+          "caption": "Middle"
+        },
+        {
+          "caption": "Left",
+          "value": "image--left"
+        },
+        {
+          "caption": "Right",
+          "value": "image--right"
+        }
+      ]
+    },
+
+    "teaser-image-position": {
+      "label": "Position",
+      "type": "select",
+      "options": [
+        {
+          "caption": "Normal"
+        },
+        {
+          "caption": "Left",
+          "value": "teaser-card--left-aligned-img"
+        },
+        {
+          "caption": "Right",
+          "value": "teaser-card--right-aligned-img"
+        }
+      ]
+    },
+
+    "container-style-breath": {
+      "label": "Extra margin",
+      "type": "option",
+      "value": "container--breath"
+    },
+
+    "container-style-lined": {
+      "label": "Add lines",
+      "type": "option",
+      "value": "container--lined"
+    },
+
+    "options": {
+      "id": "Options",
+      "label": "Options",
+      "type": "select",
+      "options": [
+        {
+          "caption": "Default"
+        },
+        {
+          "caption": "Stripe",
+          "value": "half-height"
+        }
+      ]
+    },
+
+    "featured": {
+      "label": "Featured",
+      "type": "option",
+      "value": "bleed"
+    },
+
+    "unordered": {
+      "label": "Unordered",
+      "type": "option",
+      "value": "bullet"
+    },
+
+    "large": {
+      "label": "Large",
+      "type": "option",
+      "value": "large"
+    },
+
+    "list-type": {
+      "label": "List Type",
+      "type": "select",
+      "options": [
+        {
+          "caption": "Bullets"
+        }, {
+          "caption": "Numbers",
+          "value": "decimal"
+        }, {
+          "caption": "Letters",
+          "value": "lower-latin"
+        }, {
+          "caption": "Romans",
+          "value": "lower-roman"
+        }
+      ]
+    }
+  },
+
+  "layouts": [
+    {
+      "name": "regular",
+      "caption": "Article",
+      "wrapper": "<div class=\"doc-section wrapper wrapper--in-editor wrapper--article\"></div>",
+      "icon": null,
+      "defaultContent": [
+        {
+          "identifier": "living-times.article-container",
+          "containers": {
+            "header": [
+              { "identifier": "living-times.head" }
+            ],
+            "main": [
+              { "identifier": "living-times.image" },
+              { "identifier": "living-times.paragraph" },
+              { "identifier": "living-times.teaser-author"}
+            ],
+            "sidebar-ads-top": [
+              { "identifier": "living-times.free-html" }
+            ],
+            "sidebar": [
+              {
+                "identifier": "living-times.sidebar-title",
+                "content": {
+                  "title": "Most Popular"
+                }
+              },
+              {
+                "identifier": "living-times.teaser-sidebar"
+              },
+              {
+                "identifier": "living-times.teaser-sidebar"
+              },
+              {
+                "identifier": "living-times.teaser-sidebar"
+              },
+              {
+                "identifier": "living-times.teaser-sidebar"
+              }
+            ],
+            "sidebar-ads-bottom": [
+              { "identifier": "living-times.free-html" }
+            ],
+            "footer": [
+              {
+                "identifier": "living-times.halves-article-footer",
+                "content": {
+                  "title": "Recommended Stories"
+                },
+                "containers": {
+                  "column-one": [
+                    { "identifier": "living-times.teaser-card" },
+                    { "identifier": "living-times.teaser-card" }
+                  ],
+                  "column-two": [
+                    { "identifier": "living-times.teaser-card" },
+                    { "identifier": "living-times.teaser-card" }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "groups": [
+        {
+          "label": "Headers",
+          "components": ["head", "subtitle"]
+        },
+        {
+          "label": "Text",
+          "components": ["paragraph", "quote", "separator", "bullet-list", "bullet-list-item"]
+        },
+        {
+          "label": "Images",
+          "components": ["image"]
+        },
+        {
+          "label": "Sidebar",
+          "components": ["sidebar-title", "teaser-sidebar"]
+        },
+        {
+          "label": "Footer",
+          "components": ["halves-article-footer", "teaser-card"]
+        },
+        {
+          "label": "Embeds",
+          "components": ["teaser-author", "tweet", "iframe", "free-html"]
+        }
+      ]
+    },
+    {
+      "name": "author",
+      "caption": "Author",
+      "wrapper": "<div class=\"doc-section wrapper wrapper--in-editor wrapper--article\"></div>",
+      "icon": null,
+      "defaultContent": [
+        {
+          "identifier": "living-times.author-container",
+          "containers": {
+            "main": [
+              { "identifier": "living-times.author-head" },
+              {
+                "identifier": "living-times.whole",
+                "styles": {
+                  "container-style-lined": "container--lined"
+                },
+                "content": {
+                  "title": "All Work"
+                },
+                "containers": {
+                  "column-one": []
+                }
+              }
+            ],
+            "sidebar": []
+          }
+        }
+      ],
+      "groups": [
+        {
+          "label": "Headers",
+          "components": ["author-head"]
+        },
+        {
+          "label": "Text",
+          "components": ["paragraph", "quote", "separator", "bullet-list", "bullet-list-item"]
+        },
+        {
+          "label": "Images",
+          "components": ["image"]
+        },
+        {
+          "label": "Containers",
+          "components": ["whole", "halves", "halves-uneven", "thirds", "quarter"]
+        },
+        {
+          "label": "Sidebar",
+          "components": ["sidebar-title", "teaser-sidebar"]
+        },
+        {
+          "label": "Embeds",
+          "components": ["teaser-card", "tweet", "iframe", "free-html"]
+        }
+      ]
+    },
+    {
+      "name": "gallery",
+      "caption": "Gallery",
+      "wrapper": "<div class=\"doc-section wrapper wrapper--in-editor wrapper--article\"></div>",
+      "icon": null,
+      "defaultContent": [
+        {
+          "identifier": "living-times.article-container",
+          "containers": {
+            "header": [
+              { "identifier": "living-times.head" }
+            ],
+            "main": [
+              {
+                "identifier": "living-times.gallery-container",
+                "containers": {
+                  "gallery": [
+                    { "identifier": "living-times.image" },
+                    { "identifier": "living-times.image" }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "groups": [
+        {
+          "label": "Headers",
+          "components": ["head"]
+        },
+        {
+          "label": "Image",
+          "components": ["image"]
+        }
+      ]
+    },
+    {
+      "name": "video",
+      "caption": "Video",
+      "wrapper": "<div class=\"doc-section wrapper wrapper--in-editor wrapper--article\"></div>",
+      "icon": null,
+      "defaultContent": [
+        {
+          "identifier": "living-times.article-container",
+          "containers": {
+            "header": [
+              { "identifier": "living-times.head" }
+            ],
+            "main": [
+              {
+                "identifier": "living-times.video-container",
+                "containers": {
+                  "image": [
+                    { "identifier": "living-times.image" }
+                  ],
+                  "video": [
+                    { "identifier": "living-times.free-html" }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "groups": [
+        {
+          "label": "Headers",
+          "components": ["head"]
+        },
+        {
+          "label": "Teaser Image",
+          "components": ["image"]
+        },
+        {
+          "label": "Video",
+          "components": ["free-html", "iframe"]
+        }
+      ]
+    },
+    {
+      "name": "page",
+      "caption": "Page",
+      "wrapper": "<div class=\"doc-section wrapper wrapper--in-editor wrapper--default\"></div>",
+      "icon": null,
+      "defaultContent": [
+        {
+          "identifier": "living-times.whole",
+          "styles": {
+            "container-style-breath": "container--breath"
+          },
+          "containers": {
+            "column-one": [
+              {
+                "identifier": "living-times.teaser-hero"
+              }
+            ]
+          }
+        },
+        {
+          "identifier": "living-times.thirds",
+          "styles":  {
+            "container-style-lined": "container--lined"
+          },
+          "containers": {
+            "column-one": [
+              { "identifier": "living-times.teaser-card" }
+            ],
+            "column-two": [
+              { "identifier": "living-times.teaser-card" }
+            ],
+            "column-three": [
+              { "identifier": "living-times.teaser-card" }
+            ]
+          }
+        },
+        {
+          "identifier": "living-times.quarter",
+          "styles":  {
+            "container-style-lined": "container--lined"
+          },
+          "containers": {
+            "column-one": [
+              { "identifier": "living-times.teaser-card-no-image" }
+            ],
+            "column-two": [
+              { "identifier": "living-times.teaser-card-no-image" }
+            ],
+            "column-three": [
+              { "identifier": "living-times.teaser-card-no-image" }
+            ],
+            "column-four": [
+              { "identifier": "living-times.teaser-card-no-image" }
+            ]
+          }
+        },
+        {
+          "identifier": "living-times.whole",
+          "styles" : {
+            "container-style-lined": "container--lined",
+            "container-style-breath": "container--breath"
+          },
+          "content": {
+            "title": "The latest"
+          },
+          "containers": {
+            "column-one": [
+              {
+                "identifier": "living-times.teaser-card",
+                "styles": {
+                  "teaser-image-position": "teaser-card--left-aligned-img"
+                }
+              },
+              {
+                "identifier": "living-times.teaser-card",
+                "styles": {
+                  "teaser-image-position": "teaser-card--left-aligned-img"
+                }
+              },
+              {
+                "identifier": "living-times.teaser-card",
+                "styles": {
+                  "teaser-image-position": "teaser-card--left-aligned-img"
+                }
+              },
+              {
+                "identifier": "living-times.teaser-card",
+                "styles": {
+                  "teaser-image-position": "teaser-card--left-aligned-img"
+                }
+              },
+              {
+                "identifier": "living-times.teaser-card",
+                "styles": {
+                  "teaser-image-position": "teaser-card--left-aligned-img"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "identifier": "living-times.quarter",
+          "styles":  {
+            "container-style-lined": "container--lined"
+          },
+          "content": {
+            "title": "Spotlight"
+          },
+          "containers": {
+            "column-one": [
+              { "identifier": "living-times.teaser-card" }
+            ],
+            "column-two": [
+              { "identifier": "living-times.teaser-card" }
+            ],
+            "column-three": [
+              { "identifier": "living-times.teaser-card" }
+            ],
+            "column-four": [
+              { "identifier": "living-times.teaser-card" }
+            ]
+          }
+        },
+        {
+          "identifier": "living-times.halves-uneven",
+          "styles":  {
+            "container-style-lined": "container--lined"
+          },
+          "content": {
+            "title": "Videos"
+          },
+          "containers": {
+            "column-one": [
+              { "identifier": "living-times.teaser-video" },
+              { "identifier": "living-times.teaser-video" },
+              { "identifier": "living-times.teaser-video" }
+            ],
+            "column-two": [
+              { "identifier": "living-times.teaser-video-hero" }
+            ]
+          }
+        },
+        {
+          "identifier": "living-times.halves-uneven",
+          "styles":  {
+            "container-style-lined": "container--lined"
+          },
+          "content": {
+            "title": "Photo galleries"
+          },
+          "containers": {
+            "column-one": [
+              { "identifier": "living-times.teaser-gallery" },
+              { "identifier": "living-times.teaser-gallery" },
+              { "identifier": "living-times.teaser-gallery" }
+            ],
+            "column-two": [
+              { "identifier": "living-times.teaser-gallery-hero" }
+            ]
+          }
+        }
+      ],
+      "groups": [
+        {
+          "label": "Headers",
+          "components": ["section-title"]
+        },
+        {
+          "label": "Containers",
+          "components": ["whole", "halves", "halves-uneven", "thirds", "quarter"]
+        },
+        {
+          "label": "Teasers",
+          "components": ["teaser-hero", "teaser-card", "teaser-card-no-image", "teaser-card-numbered", "teaser-card-author"]
+        },
+        {
+          "label": "Gallery Teasers",
+          "components": ["teaser-gallery-hero", "teaser-gallery"]
+        },
+        {
+          "label": "Video Teasers",
+          "components": ["teaser-video-hero", "teaser-video"]
+        },
+        {
+          "label": "Embeds",
+          "components": ["tweet", "iframe", "free-html"]
+        }
+      ]
+    }
+  ],
+
+  "defaultLayout": "regular",
+
+  "defaultComponents": {
+    "paragraph": "paragraph",
+    "image": "image",
+    "html": "free-html"
+  },
+
+  "imageRatios": {
+    "16:9": {
+      "label": "16:9",
+      "ratio": "16x9"
+    },
+    "1:1": {
+      "label": "1:1",
+      "ratio": "1x1"
+    },
+    "4:3": {
+      "label": "4:3",
+      "ratio": "4x3"
+    },
+    "3:4": {
+      "label": "3:4",
+      "ratio": "3x4"
+    }
+  },
+
+  "prefilledComponents": {
+    "head": {
+      "author": {
+        "value": "author",
+        "type": "computed"
+      }
+    }
+  },
+
+  "metadata": [
+    {
+      "identifier": "title",
+      "type": "text",
+      "matches": ["head.title"],
+      "isEditable": true
+    },
+    {
+      "identifier": "description",
+      "type": "text",
+      "matches": ["head.text", "paragraph.text"],
+      "isEditable": true
+    },
+    {
+      "identifier": "teaserImage",
+      "type": "image",
+      "matches": ["image.image"],
+      "isEditable": true,
+      "imageRatios": ["16:9"]
+    }
+  ]
+}

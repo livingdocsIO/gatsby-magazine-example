@@ -1,0 +1,129 @@
+<script type="ld-conf">
+{
+  "name": "quarter",
+  "label": "4 Columns",
+  "description": "1/4th each",
+  "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_4_columns.svg",
+  "properties": ["container-style-lined"],
+  "directives": {
+    "column-one": {
+      "allowedChildren": [
+        "free-html",
+        "iframe",
+        "tweet",
+        "section-title",
+        "subtitle",
+        "image",
+        "bullet-list",
+        "paragraph",
+        "separator",
+        "quote",
+        "teaser-card-no-image",
+        "teaser-card-numbered",
+        "teaser-card",
+        "teaser-gallery-hero",
+        "teaser-gallery",
+        "teaser-hero",
+        "teaser-video-hero",
+        "teaser-video"
+      ],
+      "defaultComponents": {
+        "paragraph": "paragraph",
+        "image": "image",
+        "html": "free-html"
+      }
+    },
+    "column-two": {
+      "allowedChildren": [
+        "free-html",
+        "iframe",
+        "tweet",
+        "section-title",
+        "subtitle",
+        "image",
+        "bullet-list",
+        "paragraph",
+        "separator",
+        "quote",
+        "teaser-card-no-image",
+        "teaser-card-numbered",
+        "teaser-card",
+        "teaser-gallery-hero",
+        "teaser-gallery",
+        "teaser-hero",
+        "teaser-video-hero",
+        "teaser-video"
+      ],
+      "defaultComponents": {
+        "paragraph": "paragraph",
+        "image": "image",
+        "html": "free-html"
+      }
+    },
+    "column-three": {
+      "allowedChildren": [
+        "free-html",
+        "iframe",
+        "tweet",
+        "section-title",
+        "subtitle",
+        "image",
+        "bullet-list",
+        "paragraph",
+        "separator",
+        "quote",
+        "teaser-card-no-image",
+        "teaser-card-numbered",
+        "teaser-card",
+        "teaser-gallery-hero",
+        "teaser-gallery",
+        "teaser-hero",
+        "teaser-video-hero",
+        "teaser-video"
+      ],
+      "defaultComponents": {
+        "paragraph": "paragraph",
+        "image": "image",
+        "html": "free-html"
+      }
+    },
+    "column-four": {
+      "allowedChildren": [
+        "free-html",
+        "iframe",
+        "tweet",
+        "section-title",
+        "subtitle",
+        "image",
+        "bullet-list",
+        "paragraph",
+        "separator",
+        "quote",
+        "teaser-card-no-image",
+        "teaser-card-numbered",
+        "teaser-card",
+        "teaser-gallery-hero",
+        "teaser-gallery",
+        "teaser-hero",
+        "teaser-video-hero",
+        "teaser-video"
+      ],
+      "defaultComponents": {
+        "paragraph": "paragraph",
+        "image": "image",
+        "html": "free-html"
+      }
+    }
+  }
+}
+</script>
+
+<div class="container container--quarter">
+  <h2 class="container__title" doc-editable="title" doc-optional="true">Section title</h2>
+  <div class="container-grid">
+    <div class="container-grid__item" doc-container="column-one"></div>
+    <div class="container-grid__item" doc-container="column-two"></div>
+    <div class="container-grid__item" doc-container="column-three"></div>
+    <div class="container-grid__item" doc-container="column-four"></div>
+  </div>
+</div>

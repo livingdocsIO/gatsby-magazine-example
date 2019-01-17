@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// BULLET LIST
+// -----------------------------------------------------------------------------
+
+// Styles for the following component:
+// -> source/components/lists/bullet-list.html
+// -> source/components/lists/bullet-list-item.html
+
+.ld-list {
+  padding-left: 2ch;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  list-style: disc;
+  clear: both;
+}
+
+.ld-list.decimal {
+  list-style: decimal;
+}
+
+.ld-list.lower-latin {
+  list-style: lower-latin;
+}
+
+.ld-list.lower-roman {
+  list-style: lower-roman;
+}

@@ -1,0 +1,86 @@
+// -----------------------------------------------------------------------------
+// AUTHOR CARD COMPONENT
+// -----------------------------------------------------------------------------
+
+// Styles for the following components:
+// -> source/components/headers/author-head.html
+// -> source/components/embeds/teaser-author-template.html
+
+.author-card {
+  display: flex;
+  align-items: flex-start;
+
+  margin-top: double($base-spacing-unit);
+  margin-bottom: double($base-spacing-unit);
+}
+
+.author-card__image {
+  & > a {
+    display: block;
+    border-radius: 100%;
+  }
+
+  max-width: 128px;
+  margin-right: $base-spacing-unit;
+}
+
+.author-card__body {
+  flex: 1;
+
+  & > h5 {
+    margin-top: $base-spacing-unit / 2;
+    margin-bottom: $base-spacing-unit / 2;
+  }
+
+  & > p {
+    margin-bottom: halve($base-spacing-unit);
+
+    font-family: $serif-font;
+    @include font-size($zeta-size, false); // 22px
+  }
+
+  & > a {
+    font-weight: bold;
+    @include font-size($mili-size);
+    color: $link-color;
+  }
+}
+
+.author-card__twitter {
+  color: $secondary-color;
+
+  svg {
+    top: 2px;
+    position: relative;
+
+    width: 16px;
+    height: 16px;
+
+    fill: $icon-color;
+  }
+}
+
+.author-card__title {
+  font-family: $serif-font;
+  margin-bottom: halve($base-spacing-unit);
+}
+
+// Modifier: Big Author CARD
+.author-card--big .author-card__body {
+  & > p {
+    font-family: $sans-serif-font;
+    @include font-size($base-font-size); // 16px
+  }
+}
+
+// Media Queries
+@media (max-width: $mq-extra-small) {
+  .author-card {
+    flex-direction: column;
+  }
+  .author-card__image {
+    margin-right: 0;
+    margin-bottom: halve($base-spacing-unit);
+    align-self: center;
+  }
+}

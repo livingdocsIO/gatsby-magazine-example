@@ -1,0 +1,46 @@
+<script type="ld-conf">
+  {
+    "name": "teaser-card",
+    "label": "Card",
+    "allowedParents": [
+      "article-container",
+      "author-container",
+      "gallery-container",
+      "video-container",
+      "halves-uneven",
+      "halves-article-footer",
+      "halves",
+      "quarter",
+      "thirds",
+      "whole"
+    ],
+    "description": "Standard teaser with image",
+    "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_teaser_with_image.svg",
+    "properties": ["teaser-image-position"],
+    "directives": {
+      "teaser": {
+        "service": "teaser",
+        "defaultParams": {
+          "layout": "card"
+        },
+        "config": {
+          "search": {
+            "displayFilters": ["documentState", "timeRange"],
+            "defaultQueries": [
+              {"type": "sortBy", "value": "relevance"},
+              {"type": "contentType", "value": "regular"}
+            ],
+            "emptySearchQueries": [
+              {"type": "sortBy", "value": "-updated_at"},
+              {"type": "contentType", "value": "regular"}
+            ]
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<div doc-include="teaser" class="placeholder--teaser-card">
+  <div class="placeholder__img"></div>
+</div>

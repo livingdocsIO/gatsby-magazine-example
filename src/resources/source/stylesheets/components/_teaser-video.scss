@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// TEASER VIDEO COMPONENT
+// -----------------------------------------------------------------------------
+
+// Styles for the following component:
+// -> source/components/teaser/teaser-gallery.html
+
+.teaser-video {
+
+  &__markup {
+    display: none;
+  }
+
+  .teaser-card {
+    cursor: pointer;
+  }
+
+  .teaser-hero {
+    cursor: pointer;
+  }
+
+}

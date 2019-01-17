@@ -1,0 +1,24 @@
+<script type="ld-conf">
+{
+  "label": "Bullet List",
+  "name": "bullet-list",
+  "description": "A bullet list",
+  "allowedParents": ["article-container"],
+  "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_unordered_list.svg",
+  "properties": ["list-type"],
+  "directives": {
+    "list": {
+      "defaultComponents": {
+        "paragraph": "bullet-list-item"
+      },
+      "defaultContent": [
+        {
+          "component": "bullet-list-item"
+        }
+      ]
+    }
+  }
+}
+</script>
+
+<ul doc-container="list" class="ld-list"></ul>

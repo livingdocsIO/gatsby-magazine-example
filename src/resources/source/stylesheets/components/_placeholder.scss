@@ -1,0 +1,100 @@
+// -----------------------------------------------------------------------------
+// PLACEHOLDERS
+// -----------------------------------------------------------------------------
+
+.placeholder__img {
+  min-height: 200px;
+  margin-bottom: $base-spacing-unit;
+
+  background-size: 64px;
+  background-color: #f7f7f7;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  opacity: .7;
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+.placeholder--teaser-card,
+.placeholder--teaser-video,
+.placeholder--teaser-gallery {
+
+  .doc-include-not-published {
+    outline: 1px dashed #e55e4e;
+    position: relative;
+
+    &::after {
+      content: 'linked article is not published';
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0 4px;
+      font-size: 12px;
+      line-height: 1.3;
+      color: #fff;
+      background: #e55e4e;
+    }
+  }
+
+}
+
+.placeholder--teaser-card,
+.placeholder--teaser-video,
+.placeholder--teaser-gallery,
+.placeholder--free-html,
+.placeholder--twitter {
+  margin-bottom: $base-spacing-unit;
+  clear: both;
+}
+
+@media (min-width: $mq-extra-small + 1) {
+  .placeholder--free-html,
+  .placeholder--twitter {
+    &.left, &.right {
+      width: 50%;
+    }
+
+    &.left {
+      float: left;
+      margin-right: $base-spacing-unit;
+    }
+
+    &.right {
+      float: right;
+      margin-left: $base-spacing-unit;
+    }
+  }
+}
+
+.placeholder--teaser-card .placeholder__img {
+  background-image: url('../assets/images/teaser-placeholder.svg');
+}
+
+.placeholder--teaser-video .placeholder__img {
+  background-image: url('../assets/images/teaser-video-placeholder.svg');
+}
+
+.placeholder--teaser-gallery .placeholder__img {
+  background-image: url('../assets/images/teaser-gallery-placeholder.svg');
+}
+
+.placeholder--free-html .placeholder__img {
+  background-image: url('../assets/images/html-placeholder.svg');
+}
+
+.placeholder--twitter .placeholder__img {
+  background-image: url('../assets/images/twitter-placeholder.svg');
+}
+
+
+// Fake header and footer
+// The fake header and footer are only visible in the editor
+.wrapper--in-editor {
+  padding-top: 220px;
+  padding-bottom: 100px;
+
+  background-repeat: no-repeat;
+  background-position: top center, bottom center;
+  background-image: url('../assets/images/abstract-header.svg'), url('../assets/images/abstract-footer.svg');
+  background-size: auto 193px, auto 93px;
+}

@@ -1,0 +1,23 @@
+<script type="ld-conf">
+  {
+    "name": "gallery-container",
+    "label": "Gallery Container",
+    "description": "1 column to add images",
+    "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_1_column.svg",
+    "directives": {
+      "gallery": {
+        "allowedChildren": [
+          "image"
+        ],
+        "defaultComponents": {
+          "paragraph": "paragraph",
+          "image": "image",
+          "html": "free-html"
+        }
+      }
+    }
+  }
+</script>
+
+<div class="gallery-container" doc-container="gallery">
+</div>

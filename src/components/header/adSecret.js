@@ -1,5 +1,5 @@
 import React from 'react'
-import ad from '../resources/ad-secret.gif'
+import ad from '../../resources/ad-secret.gif'
 
 const adSecret = () => (
   <div className="ad ad--head">

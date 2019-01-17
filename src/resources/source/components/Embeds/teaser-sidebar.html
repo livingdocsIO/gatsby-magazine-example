@@ -1,0 +1,34 @@
+<script type="ld-conf">
+  {
+    "name": "teaser-sidebar",
+    "label": "Teaser",
+    "allowedParents": ["article-container"],
+    "description": "Article teaser in the sidebar",
+    "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_teaser_without_image.svg",
+    "directives": {
+      "embed": {
+        "service": "teaser",
+        "defaultParams": {
+          "layout": "sidebar-embed"
+        },
+        "config": {
+          "search": {
+            "displayFilters": ["documentState", "timeRange"],
+            "defaultQueries": [
+              {"type": "sortBy", "value": "relevance"},
+              {"type": "contentType", "value": "regular"}
+            ],
+            "emptySearchQueries": [
+              {"type": "sortBy", "value": "-updated_at"},
+              {"type": "contentType", "value": "regular"}
+            ]
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<div doc-include="embed" class="placeholder--teaser-card">
+  <div class="placeholder__img"></div>
+</div>

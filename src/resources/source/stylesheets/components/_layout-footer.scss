@@ -1,0 +1,62 @@
+// -----------------------------------------------------------------------------
+// FOOTER
+// -----------------------------------------------------------------------------
+
+// Styles for the following components:
+// -> source/components/layout/article-layout.html
+// -> source/components/layout/article-layout-footer.html
+
+.page-foot {
+  margin-left: $base-spacing-unit;
+  margin-right: $base-spacing-unit;
+  border-top: 1px solid $divider-color;
+
+  // margin-top: double($base-spacing-unit);
+}
+
+.page-foot__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: halve($base-spacing-unit);
+}
+
+.footer-links {
+  margin-left: 0;
+
+  @include font-size($mili-size, false);
+
+  list-style: none;
+
+  & > li {
+    display: inline-block;
+    margin-right: halve($base-spacing-unit);
+  }
+
+  & > li:last-child {
+    margin-right: 0;
+  }
+
+}
+
+
+// Media Queries
+@media (max-width: 1080px) {
+  .page-foot__wrapper {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    margin-bottom: halve($base-spacing-unit);
+  }
+}
+
+@media (max-width: $mq-small) {
+  .page-foot {
+    margin-left: halve($base-spacing-unit);
+    margin-right: halve($base-spacing-unit);
+  }
+}

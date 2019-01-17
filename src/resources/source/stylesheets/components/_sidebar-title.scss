@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// SIDEBAR TITLE COMPONENT
+// -----------------------------------------------------------------------------
+
+// Styles for the following component:
+// -> source/components/images/sidebar-title.html
+
+.sidebar-title {
+  padding-top: halve($base-spacing-unit);
+  margin-bottom: halve($base-spacing-unit);
+
+  text-align: center;
+  @include font-size($zeta-size); // 22px
+
+  border-top: 1px solid $divider-color;
+}

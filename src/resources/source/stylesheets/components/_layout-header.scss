@@ -1,0 +1,141 @@
+// -----------------------------------------------------------------------------
+// HEADER
+// -----------------------------------------------------------------------------
+
+// Styles for the following components:
+// -> source/components/layout/article-layout.html
+// -> source/components/layout/article-layout-header.html
+
+.page-head {
+  position: relative;
+
+  overflow: hidden;
+  margin-bottom: $base-spacing-unit;
+}
+
+// Logo
+.logo {
+  max-width: 375px;
+  margin: 20px auto;
+}
+
+.logo__handheld {
+  display: none;
+}
+
+// Meta navgation styles
+.meta-nav {
+  top: 36px;
+  position: absolute;
+  right: $base-spacing-unit;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.meta-nav__item a {
+  display: block;
+  padding: quarter($base-spacing-unit);
+
+  text-decoration: none;
+  @include font-size($mili-size);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.meta-nav__item--highlight a {
+  color: $jungle-green;
+}
+
+
+// Main navigation styles
+.nav-container {
+  margin-left: $base-spacing-unit;
+  margin-right: $base-spacing-unit;
+  margin-bottom: halve($base-spacing-unit);
+
+  border-top: 1px solid $divider-color;
+  border-bottom: 1px solid $divider-color;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: nowrap;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.main-nav__item {
+  flex: 1 1 auto;
+  text-align: center;
+  transition: background-color 250ms;
+
+  > a {
+    display: block;
+    padding: quarter($base-spacing-unit) halve($base-spacing-unit);
+
+    text-decoration: none;
+    @include font-size($mili-size); // 14px
+
+    white-space: nowrap;
+  }
+
+  &:hover {
+    background-color: lighten($text-color, 97%);
+  }
+
+  &.is-selected a {
+    font-weight: bold;
+  }
+}
+
+
+// Media Queries
+@media (max-width: $mq-small) {
+  .logo {
+    max-width: 250px;
+    margin: 24px 0 24px halve($base-spacing-unit);
+    margin-right: 0;
+  }
+
+  .logo__desktop {
+    display: none;
+  }
+
+  .logo__handheld {
+    display: block;
+  }
+
+  .meta-nav {
+    top: 29px;
+    right: halve($base-spacing-unit);
+  }
+
+  .nav-container {
+    margin-left: halve($base-spacing-unit);
+    margin-right: halve($base-spacing-unit);
+  }
+}
+
+@media (max-width: $mq-extra-small) {
+  .logo {
+    max-width: 180px;
+    margin: 12px 0 12px halve($base-spacing-unit);
+  }
+
+  .meta-nav {
+    top: 11px;
+  }
+
+  .main-nav__item {
+    flex-basis: 25%;
+  }
+}

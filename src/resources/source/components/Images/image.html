@@ -1,0 +1,33 @@
+<script type="ld-conf">
+{
+  "label": "Image",
+  "properties": ["image-position"],
+  "description": "Image with caption",
+  "allowedParents": [
+    "article-container",
+    "video-container",
+    "gallery-container",
+    "teaser-author-template",
+    "author-head",
+    "teaser-card-author-template",
+    "teaser-card-template",
+    "teaser-gallery-hero-template",
+    "teaser-gallery-template",
+    "teaser-hero-template",
+    "teaser-video-hero-template",
+    "teaser-video-template"
+  ],
+  "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg",
+  "directives": {
+    "image": {
+      "imageRatios": ["16:9", "1:1", "4:3", "3:4"],
+      "allowOriginalRatio": true
+    }
+  }
+}
+</script>
+
+<figure class="image">
+  <img doc-image="image" />
+  <figcaption class="image__caption" doc-editable="caption" doc-optional="true">Add image caption</figcaption>
+</figure>

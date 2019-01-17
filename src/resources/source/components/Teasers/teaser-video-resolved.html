@@ -1,0 +1,88 @@
+<script type="ld-conf">
+  {
+    "label": "Video Teaser Resolved"
+  }
+</script>
+
+<div class="teaser-video">
+  <div class="teaser-card">
+    <figure class="teaser-card__figure">
+      <img class="teaser-card__image" src="https://livingdocs.imgix.net/2016/10/28/26303a92-2cf7-425e-b5b3-15d5b54c5564.jpeg?rect=256,66,1075,605">
+    </figure>
+    <div class="teaser-card__body">
+      <h2 class="teaser-card__title">Ghibli things here</h2>
+    </div>
+  </div>
+  <!--- HTML5 Video
+  Unescaped:
+    <video
+      controls
+      preload="auto"
+    >
+      <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></source>
+      <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm"></source>
+      <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg"></source>
+    </video>
+  Escaped:
+    %0A%3Cvideo%0A%20%20%20%20%20%20controls%0A%20%20%20%20%20%20preload%3D%22auto%22%0A%20%20%20%20%3E%0A%20%20%20%20%20%20%3Csource%20src%3D%22//vjs.zencdn.net/v/oceans.mp4%22%20type%3D%22video/mp4%22%3E%3C/source%3E%0A%20%20%20%20%20%20%3Csource%20src%3D%22//vjs.zencdn.net/v/oceans.webm%22%20type%3D%22video/webm%22%3E%3C/source%3E%0A%20%20%20%20%20%20%3Csource%20src%3D%22//vjs.zencdn.net/v/oceans.ogv%22%20type%3D%22video/ogg%22%3E%3C/source%3E%0A%20%20%20%20%3C/video%3E
+  --->
+  <!--- Iframe youtube embed
+  Unescaped:
+    <iframe src="https://www.youtube.com/embed/aVS4W7GZSq0?ecver=2" width="854" height="480" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+  Escaped:
+    %3Ciframe%20src%3D%22https%3A//www.youtube.com/embed/aVS4W7GZSq0%3Fecver%3D2%22%20width%3D%22854%22%20height%3D%22480%22%20frameborder%3D%220%22%20gesture%3D%22media%22%20allow%3D%22encrypted-media%22%20allowfullscreen%3E%3C/iframe%3E
+  --->
+  <div class="teaser-video__markup">
+    <div class="embed-container">
+      <div>
+        %0A%3Cvideo%0A%20%20%20%20%20%20controls%0A%20%20%20%20%20%20preload%3D%22auto%22%0A%20%20%20%20%3E%0A%20%20%20%20%20%20%3Csource%20src%3D%22//vjs.zencdn.net/v/oceans.mp4%22%20type%3D%22video/mp4%22%3E%3C/source%3E%0A%20%20%20%20%20%20%3Csource%20src%3D%22//vjs.zencdn.net/v/oceans.webm%22%20type%3D%22video/webm%22%3E%3C/source%3E%0A%20%20%20%20%20%20%3Csource%20src%3D%22//vjs.zencdn.net/v/oceans.ogv%22%20type%3D%22video/ogg%22%3E%3C/source%3E%0A%20%20%20%20%3C/video%3E
+      </div>
+    </div>
+  </div>
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe.
+           It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+      <!-- Container that holds slides.
+              PhotoSwipe keeps only 3 of them in the DOM to save memory.
+              Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <!--  Controls are self-explanatory. Order can be changed. -->
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

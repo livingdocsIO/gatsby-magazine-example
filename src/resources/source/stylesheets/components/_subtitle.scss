@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------------------
+// SUBTITLE COMPONENT
+// -----------------------------------------------------------------------------
+
+// Styles for the following component:
+// -> source/components/headers/subtitle.html
+
+.subtitle {
+  @include font-size($zeta-size); // 22px
+}

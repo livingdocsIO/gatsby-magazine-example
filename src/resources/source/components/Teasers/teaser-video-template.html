@@ -1,0 +1,63 @@
+<script type="ld-conf">
+  {
+    "label": "Video Teaser Template"
+  }
+</script>
+
+<div class="teaser-video">
+  <div class="teaser-card">
+    <figure class="teaser-card__figure">
+      <img class="teaser-card__image" doc-image="image">
+      <figcaption class="teaser-card__caption">
+        <svg class="teaser-card__icon teaser-card__icon--play" viewBox="0 0 24 24">
+          <path fill="#fff" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,16.5L16,12L10,7.5V16.5Z" />
+        </svg>
+        Video
+      </figcaption>
+    </figure>
+
+    <div class="teaser-card__body">
+      <h2 class="teaser-card__title" doc-editable="title"></h2>
+      <p class="teaser-card__text" doc-editable="text" doc-optional="true"></p>
+    </div>
+  </div>
+
+  <div class="teaser-video__markup" doc-container="video"></div>
+
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

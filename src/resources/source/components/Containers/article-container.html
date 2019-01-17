@@ -1,0 +1,100 @@
+<script type="ld-conf">
+  {
+    "name": "article-container",
+    "label": "Article Container",
+    "description": "Main container for articles",
+    "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_2_columns_uneven.svg",
+    "directives": {
+      "header": {
+        "allowedChildren": [
+          "head"
+        ],
+        "defaultComponents": {
+          "paragraph": "paragraph",
+          "image": "image",
+          "html": "free-html"
+        }
+      },
+      "main": {
+        "allowedChildren": [
+          "free-html",
+          "iframe",
+          "tweet",
+          "subtitle",
+          "image",
+          "bullet-list",
+          "paragraph",
+          "separator",
+          "quote",
+          "teaser-author",
+          "video-container",
+          "gallery-container"
+        ],
+        "defaultComponents": {
+          "paragraph": "paragraph",
+          "image": "image",
+          "html": "free-html"
+        }
+      },
+      "sidebar-ads-top": {
+        "allowedChildren": [
+          "free-html",
+          "iframe",
+          "ad-rectangle-resolved"
+        ],
+        "defaultComponents": {
+          "paragraph": "paragraph",
+          "image": "image",
+          "html": "free-html"
+        }
+      },
+      "sidebar": {
+        "allowedChildren": [
+          "teaser-sidebar",
+          "sidebar-title"
+        ],
+        "defaultComponents": {
+          "paragraph": "paragraph",
+          "image": "image",
+          "html": "free-html"
+        }
+      },
+      "sidebar-ads-bottom": {
+        "allowedChildren": [
+          "free-html",
+          "iframe",
+          "ad-rectangle-resolved"
+        ],
+        "defaultComponents": {
+          "paragraph": "paragraph",
+          "image": "image",
+          "html": "free-html"
+        }
+      },
+      "footer": {
+        "allowedChildren": [
+          "halves",
+          "halves-article-footer"
+        ],
+        "defaultComponents": {
+          "paragraph": "paragraph",
+          "image": "image",
+          "html": "free-html"
+        }
+      }
+    }
+  }
+</script>
+
+<article class="article-content">
+  <header class="article-content__header" doc-container="header"></header>
+  <div class="article-content__body">
+    <main class="article-content__main" doc-container="main"></main>
+    <aside class="article-content__sidebar">
+      <div doc-container="sidebar-ads-top"></div>
+      <div doc-container="sidebar"></div>
+      <div doc-container="sidebar-ads-bottom"></div>
+    </aside>
+  </div>
+  <section class="article-content__footer" doc-container="footer"></section>
+</article>

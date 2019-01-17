@@ -1,0 +1,45 @@
+<script type="ld-conf">
+  {
+    "name": "teaser-author",
+    "label": "Author",
+    "description": "Teaser to author page",
+    "allowedParents": [
+      "article-container",
+      "author-container",
+      "gallery-container",
+      "video-container",
+      "halves-uneven",
+      "halves-article-footer",
+      "halves",
+      "quarter",
+      "thirds",
+      "whole"
+    ],
+    "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_teaser_author.svg",
+    "directives": {
+      "embed": {
+        "service": "teaser",
+        "defaultParams": {
+          "layout": "author-embed"
+        },
+        "config": {
+          "search": {
+            "displayFilters": ["documentState", "timeRange"],
+            "defaultQueries": [
+              {"type": "sortBy", "value": "relevance"},
+              {"type": "contentType", "value": "author"}
+            ],
+            "emptySearchQueries": [
+              {"type": "sortBy", "value": "-updated_at"},
+              {"type": "contentType", "value": "author"}
+            ]
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<div doc-include="embed" class="placeholder--teaser-card">
+  <div class="placeholder__img"></div>
+</div>

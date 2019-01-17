@@ -1,0 +1,48 @@
+<script type="ld-conf">
+{
+  "name": "whole",
+  "label": "1 Column",
+  "description": "One large column for content",
+  "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_1_column.svg",
+  "properties": ["container-style-breath", "container-style-lined"],
+  "directives": {
+    "column-one": {
+      "allowedChildren": [
+        "free-html",
+        "iframe",
+        "tweet",
+        "section-title",
+        "subtitle",
+        "image",
+        "bullet-list",
+        "paragraph",
+        "separator",
+        "quote",
+        "teaser-card-no-image",
+        "teaser-card-numbered",
+        "teaser-card",
+        "teaser-gallery-hero",
+        "teaser-gallery",
+        "teaser-hero",
+        "teaser-video-hero",
+        "teaser-video",
+        "ad-leaderboard-resolved"
+      ],
+      "defaultComponents": {
+        "paragraph": "paragraph",
+        "image": "image",
+        "html": "free-html"
+      }
+    }
+  }
+}
+</script>
+
+<div class="container">
+  <h2 class="container__title" doc-editable="title" doc-optional="true">
+    Section title
+  </h2>
+  <div class="container-grid container-grid--whole">
+    <div class="container-grid__item" doc-container="column-one"></div>
+  </div>
+</div>

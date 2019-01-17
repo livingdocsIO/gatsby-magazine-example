@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link, StaticQuery, graphql} from 'gatsby'
-import logo from '../resources/li-logo.svg'
+import logo from '../../resources/li-logo.svg'
 
 // query the available Pages, and create he navigation bar in the header (exclude "Home")
 const renderNavItems = () => (
