@@ -6,8 +6,11 @@ import Footer from '../footer'
 import favicon from '../../resources/favicon.png'
 import '../../resources/source/stylesheets/living-times.scss'
 import {metadata} from '../../../config.js'
+
 import {initiateVideoTeasers} from '../helpers/initVideoTeasers'
 import {initiateGalleryTeasers} from '../helpers/initGalleryTeasers'
+import 'photoswipe/dist/photoswipe.css'
+import 'photoswipe/dist/default-skin/default-skin.css'
 
 // Set a basic set of SEO data
 // articles and author-pages will over overwrite some of them
