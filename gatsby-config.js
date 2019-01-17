@@ -38,7 +38,13 @@ module.exports = {
         background_color: '#6b37bf',
         theme_color: '#6b37bf',
         display: 'minimal-ui',
-        icon: 'src/components/resources/favicon.png'
+        icon: 'src/resources/favicon.png'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: ['src/resources/stylesheets/living-times.scss']
       }
     }
   ]
