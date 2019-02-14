@@ -31,7 +31,7 @@ exports.sourceNodes = ({actions}, configOptions) => {
     // so if the limit is 10 and we get 10 publications back
     // it will assume there's more and increase the offset and call itself again.
     // if the condition isn't met null is returned and the loop stops
-    publications.length === limit && await getAllPublicationsRecursively(offset + limit)
+    return publications.length === limit && getAllPublicationsRecursively(offset + limit)
   }
 
   const getAllPublications = async () => {
