@@ -1186,7 +1186,7 @@
     },
     {
       "name": "article-layout-footer",
-      "html": "<nav class=\"page-foot__wrapper\"><ul class=\"footer-links footer-links--left-aligned\"><li>&#xA9; 2018 Livingdocs Times</li><li><a href=\"mailto:contac@livingdocs.io\">Contact us</a></li><li><a href=\"https://www.livingdocs.io/product-1\">Work With us</a></li><li><a href=\"https://github.com/livingdocsIO/magazine-example\">Github</a></li></ul><ul class=\"footer-links footer-links--right-aligned\"><li>This is an open-source Demo Magazine built with Livingdocs. Check out the code and make it yours!</li></ul></nav>",
+      "html": "<nav class=\"page-foot__wrapper\"><ul class=\"footer-links footer-links--left-aligned\"><li>&#xA9; 2018 Livingdocs Times</li><li><a href=\"mailto:contac@livingdocs.io\">Contact us</a></li><li><a href=\"https://www.livingdocs.io/product-5919\">Work With us</a></li><li><a href=\"https://github.com/livingdocsIO/magazine-example\">Github</a></li></ul><ul class=\"footer-links footer-links--right-aligned\"><li>This is an open-source Demo Magazine built with Livingdocs. Check out the code and make it yours!</li></ul></nav>",
       "label": "Article layout footer"
     },
     {
@@ -1207,7 +1207,7 @@
     },
     {
       "name": "default-layout-footer",
-      "html": "<nav class=\"page-foot__wrapper\"><ul class=\"footer-links footer-links--left-aligned\"><li>&#xA9; 2018 Livingdocs Times</li><li><a href=\"mailto:contac@livingdocs.io\">Contact us</a></li><li><a href=\"https://www.livingdocs.io/product-1\">Work With us</a></li><li><a href=\"https://github.com/livingdocsIO/magazine-example\">Github</a></li></ul><ul class=\"footer-links footer-links--right-aligned\"><li>This is an open-source Demo Magazine built with Livingdocs. Check out the code and make it yours!</li></ul></nav>",
+      "html": "<nav class=\"page-foot__wrapper\"><ul class=\"footer-links footer-links--left-aligned\"><li>&#xA9; 2018 Livingdocs Times</li><li><a href=\"mailto:contac@livingdocs.io\">Contact us</a></li><li><a href=\"https://www.livingdocs.io/product-5919\">Work With us</a></li><li><a href=\"https://github.com/livingdocsIO/magazine-example\">Github</a></li></ul><ul class=\"footer-links footer-links--right-aligned\"><li>This is an open-source Demo Magazine built with Livingdocs. Check out the code and make it yours!</li></ul></nav>",
       "label": "Default layout footer"
     },
     {
@@ -1228,7 +1228,7 @@
     },
     {
       "name": "page-layout-footer",
-      "html": "<nav class=\"page-foot__wrapper\"><ul class=\"footer-links footer-links--left-aligned\"><li>&#xA9; 2018 Livingdocs Times</li><li><a href=\"mailto:contac@livingdocs.io\">Contact us</a></li><li><a href=\"https://www.livingdocs.io/product-1\">Work With us</a></li><li><a href=\"https://github.com/livingdocsIO/magazine-example\">Github</a></li></ul><ul class=\"footer-links footer-links--right-aligned\"><li>This is an open-source Demo Magazine built with Livingdocs. Check out the code and make it yours!</li></ul></nav>",
+      "html": "<nav class=\"page-foot__wrapper\"><ul class=\"footer-links footer-links--left-aligned\"><li>&#xA9; 2018 Livingdocs Times</li><li><a href=\"mailto:contac@livingdocs.io\">Contact us</a></li><li><a href=\"https://www.livingdocs.io/product-5919\">Work With us</a></li><li><a href=\"https://github.com/livingdocsIO/magazine-example\">Github</a></li></ul><ul class=\"footer-links footer-links--right-aligned\"><li>This is an open-source Demo Magazine built with Livingdocs. Check out the code and make it yours!</li></ul></nav>",
       "label": "Page layout footer"
     },
     {
