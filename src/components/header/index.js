@@ -48,12 +48,12 @@ const Header = props => (
       </div>
       <nav className="meta-nav">
         <div className="meta-nav__item">
-          <Link to="https://github.com/livingdocsIO/gatsby-magazine-example">Source Code</Link>
+          <a href="https://github.com/livingdocsIO/gatsby-magazine-example" target="_blank" rel="noopener noreferrer">Source Code</a>
         </div>
         <div className="meta-nav__item meta-nav__item--highlight">
-          <Link to="https://www.livingdocs.io/pssst" target="blank_">
+          <a href="https://www.livingdocs.io/pssst" target="blank_" rel="noopener noreferrer">
             Subscribe
-          </Link>
+          </a>
         </div>
       </nav>
       <div className="nav-container">
