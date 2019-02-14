@@ -4,7 +4,8 @@ module.exports = async function resolveEmbedTeaserIncludes ({
   livingdoc,
   liClient,
   includes,
-  includeConfig
+  includeConfig,
+  design
 }) {
   const dataFetchTasks = startDataFetchTasks(includes, liClient)
   for (const task of dataFetchTasks) {
@@ -17,7 +18,7 @@ module.exports = async function resolveEmbedTeaserIncludes ({
     const publication = await request
     if (!publication) throw new Error(`Article embed with id "${params.mediaId}" not found`)
 
-    const renderArgs = [liClient, livingdoc, layout, includeConfig, publication]
+    const renderArgs = [liClient, livingdoc, layout, includeConfig, publication, design]
 
     const html = await renderInclude(...renderArgs)
 

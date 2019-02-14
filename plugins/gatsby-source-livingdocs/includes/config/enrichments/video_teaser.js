@@ -1,7 +1,7 @@
 const createLivingdoc = require('./helpers/create_livingdoc')
 
-module.exports = function enrichVideoTeaserContent ({component, publication} = {}) {
-  const videoLivingdoc = createLivingdoc(publication)
+module.exports = function enrichVideoTeaserContent ({component, publication, design} = {}) {
+  const videoLivingdoc = createLivingdoc(publication, design)
   const tree = videoLivingdoc.componentTree
 
   const freeHtmlComponents = tree.find('free-html')

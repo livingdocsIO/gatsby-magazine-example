@@ -1,7 +1,6 @@
 const liSDK = require('@livingdocs/node-sdk')
-const design = require('./design.json')
 
-module.exports = function createLivingdoc (publication) {
+module.exports = function createLivingdoc (publication, design) {
   const {content} = publication
   return liSDK.document.create({content, design})
 }

@@ -1,7 +1,7 @@
 const liSDK = require('@livingdocs/node-sdk')
 
-module.exports = async function resolveIncludes (livingdoc, liClient, includesConfig) {
-  const resolverTasks = startResolverTasks(livingdoc, liClient, includesConfig)
+module.exports = async function resolveIncludes (livingdoc, liClient, includesConfig, design) {
+  const resolverTasks = startResolverTasks(livingdoc, liClient, includesConfig, design)
   for (const task of resolverTasks) {
     const {serviceName, resolver} = task
     try {
@@ -13,7 +13,7 @@ module.exports = async function resolveIncludes (livingdoc, liClient, includesCo
   }
 }
 
-function startResolverTasks (livingdoc, liClient, includesConfig) {
+function startResolverTasks (livingdoc, liClient, includesConfig, design) {
   const includeMap = liSDK.document.getIncludes(livingdoc)
   return Object.keys(includeMap).map(serviceName => {
     switch (serviceName) {
@@ -24,7 +24,8 @@ function startResolverTasks (livingdoc, liClient, includesConfig) {
             liClient,
             livingdoc,
             includes: includeMap['teaser'],
-            includeConfig: includesConfig['teaser']
+            includeConfig: includesConfig['teaser'],
+            design
           })
         }
 

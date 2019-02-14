@@ -5,13 +5,14 @@ module.exports = async function renderInclude (
   livingdoc,
   layout,
   includeConfig,
-  publication
+  publication,
+  design
 ) {
   const layoutConfig = includeConfig.layouts[layout]
   const component = livingdoc.createComponent(layoutConfig.template)
 
   const includeContent = getIncludeContent(layoutConfig.contentSpec, publication)
-  const enrichmentArgs = [layoutConfig.contentEnrichments, liClient, component, publication]
+  const enrichmentArgs = [layoutConfig.contentEnrichments, liClient, component, publication, design]
   const enrichments = await getContentEnrichments(...enrichmentArgs)
 
   component.setContent({...includeContent, ...enrichments})
@@ -28,9 +29,15 @@ function getIncludeContent (contentSpec, publication) {
   }, {})
 }
 
-async function getContentEnrichments (contentEnrichments = [], liClient, component, publication) {
+async function getContentEnrichments (
+  contentEnrichments = [],
+  liClient,
+  component,
+  publication,
+  design
+) {
   const pendingEnrichments = contentEnrichments.map(contentEnrichment =>
-    contentEnrichment({liClient, component, publication})
+    contentEnrichment({liClient, component, publication, design})
   )
   let enrichments = {}
   for (const pendingEnrichment of pendingEnrichments) {
