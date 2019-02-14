@@ -49,7 +49,7 @@ exports.sourceNodes = ({actions}, configOptions) => {
       publication.systemdata.documentType === 'article' ||
       publication.systemdata.documentType === 'page'
     ) {
-      await resolveIncludes(livingdoc, liClient, includesConfig)
+      await resolveIncludes(livingdoc, liClient, includesConfig, design)
 
       const documentType = publication.systemdata.documentType
       const currentDocumentType = documentTypes && documentTypes[documentType]
