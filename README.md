@@ -30,8 +30,6 @@ This magazine-starter is supposed to help you start out with Livingdocs as a hea
       {
         resolve: 'gatsby-source-Livingdocs',
         options: {
-          // optional, limit: default 10, max 100
-          limit: 100,
           // The accessToken is accessed at buildtime.
           // In this example we used "netlify" and set our Token there.
           accessToken: process.env.accessToken
