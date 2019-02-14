@@ -27,11 +27,7 @@ exports.sourceNodes = ({actions}, configOptions) => {
   const getAllPublicationsRecursively = async (offset = 0) => {
     const publications = await liClient.getPublications({offset, limit})
     allPublications.push(...publications)
-    if (publications.length === limit) {
-      await getAllPublicationsRecursively(offset + limit)
-    } else {
-      return
-    }
+    publications.length === limit && await getAllPublicationsRecursively(offset + limit)
   }
 
   const getAllPublications = async () => {
@@ -77,22 +73,24 @@ exports.sourceNodes = ({actions}, configOptions) => {
       children: [],
       publication, // the graphQL content, schema automatically created by gatsby
       extra: {
-        slug: slugify(publication.metadata.title, publication.systemdata.documentId),
+        slug: slugify(
+          publication.metadata.title,
+          publication.systemdata.documentId
+        ),
         html
       }
     }
     return nodeData
   }
+
   async function createNodes () {
-    if (recursion) {
-      await getAllPublicationsRecursively()
-    } else {
-      await getAllPublications()
-    }
+    recursion ? await getAllPublicationsRecursively() : await getAllPublications()
+
     const design = await liClient.getDesign({
       name: 'living-times',
       version: '0.0.19'
     })
+
     for (const publication of allPublications) {
       const nodeData = await processPublication(publication, design)
       createNode(nodeData)
