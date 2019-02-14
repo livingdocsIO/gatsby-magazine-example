@@ -6,13 +6,13 @@ const footer = () => (
       <ul className="footer-links footer-links--left-aligned">
         <li>© 2018 Livingdocs Times</li>
         <li>
-          <a href="mailto:contac@livingdocs.io">Contact us</a>
+          <a href="mailto:contact@livingdocs.io">Contact us</a>
         </li>
         <li>
-          <a href="https://www.livingdocs.io/product-1">Work With us</a>
+          <a href="https://www.livingdocs.io/product-5919">Work With us</a>
         </li>
         <li>
-          <a href="https://github.com/livingdocsIO/magazine-example">Github</a>
+          <a href="https://github.com/livingdocsIO/gatsby-magazine-example">Github</a>
         </li>
       </ul>
       <ul className="footer-links footer-links--right-aligned">
