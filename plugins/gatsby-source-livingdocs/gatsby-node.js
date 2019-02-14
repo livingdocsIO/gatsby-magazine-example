@@ -27,6 +27,10 @@ exports.sourceNodes = ({actions}, configOptions) => {
   const getAllPublicationsRecursively = async (offset = 0) => {
     const publications = await liClient.getPublications({offset, limit})
     allPublications.push(...publications)
+
+    // so if the limit is 10 and we get 10 publications back
+    // it will assume there's more and increase the offset and call itself again.
+    // if the condition isn't met null is returned and the loop stops
     publications.length === limit && await getAllPublicationsRecursively(offset + limit)
   }
 
