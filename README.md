@@ -4,7 +4,7 @@ This magazine-starter is supposed to help you start out with Livingdocs as a hea
 
 ## See it in action:
 
-[Gatsby-magazine example](https://jovial-shaw-3479ee.netlify.com/)
+[Gatsby-magazine example](https://magazine-example.livingdocs.io/)
 
 ## Quick start
 
