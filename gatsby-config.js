@@ -8,12 +8,12 @@ module.exports = {
       resolve: 'gatsby-source-livingdocs',
       options: {
         // The accessToken is accessed at buildtime and set in netlify in this case
-        accessToken: process.env.accessToken
-
-        // limit: 10, Default=10. Max=100. Defines how many documents are gathered per request.
-        // recursion: true, Default=true changing not advised.
-        // recursion: false - limit will now be the number of documents you recieve back.
-
+        accessToken: process.env.accessToken,
+        design: {
+          name: 'living-times',
+          version: '1.0.0'
+        },
+        recursion: true
       }
     },
     'gatsby-plugin-react-helmet',

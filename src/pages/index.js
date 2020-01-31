@@ -7,7 +7,7 @@ const Homepage = props => {
   const home = props.data.allPublications.edges.find(
     publication => publication.node.publication.metadata.title === 'Home'
   )
-  const html = home.node.extra.html
+  const html = home && home.node.extra.html
   return (
     <Layout>
       <AdSecret />
