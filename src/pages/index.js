@@ -4,6 +4,14 @@ import Layout from '../components/layout'
 import AdSecret from '../components/header/adSecret'
 
 const Homepage = props => {
+  if (!props.data.allPublications) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'No pages have been found.' +
+      'Please create a starting page https://edit.livingdocs.io/pages'
+    )
+    return <div>Homepage not found</div>
+  }
   const home = props.data.allPublications.edges.find(
     publication => publication.node.publication.metadata.title === 'Home'
   )

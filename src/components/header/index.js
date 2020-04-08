@@ -7,7 +7,11 @@ const renderNavItems = () => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
-        allPublications(filter: {publication: {systemdata: {contentType: {eq: "page"}}}}) {
+        allPublications(
+          filter: {
+            publication: { systemdata: { contentType: { eq: "page" } } }
+          }
+        ) {
           edges {
             node {
               extra {
@@ -23,22 +27,39 @@ const renderNavItems = () => (
         }
       }
     `}
-    render={data =>
-      data.allPublications.edges.map(
-        page =>
+    render={(data) => {
+      if (!data.allPublications) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          'No pages created in Livingdocs found.' +
+            'If you create some pages, we have some basic logic creating a menu for you!'
+        )
+        return (
+          <div className="main-nav__item">
+            <Link to="/" activeStyle={{fontWeight: 'bold'}}>
+              Create your own menu, back to home !
+            </Link>
+          </div>
+        )
+      }
+      return data.allPublications.edges.map(
+        (page) =>
           page.node.publication.metadata.title !== 'Home' && (
             <div className="main-nav__item" key={page.node.extra.slug}>
-              <Link to={page.node.extra.slug} activeStyle={{fontWeight: 'bold'}}>
+              <Link
+                to={page.node.extra.slug}
+                activeStyle={{fontWeight: 'bold'}}
+              >
                 {page.node.publication.metadata.title}
               </Link>
             </div>
           )
       )
-    }
+    }}
   />
 )
 
-const Header = props => (
+const Header = (props) => (
   <header className="page-head" role="banner" style={{marginBottom: '0px'}}>
     <div>
       <div className="logo">
@@ -48,10 +69,20 @@ const Header = props => (
       </div>
       <nav className="meta-nav">
         <div className="meta-nav__item">
-          <a href="https://github.com/livingdocsIO/gatsby-magazine-example" target="_blank" rel="noopener noreferrer">Source Code</a>
+          <a
+            href="https://github.com/livingdocsIO/gatsby-magazine-example"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Source Code
+          </a>
         </div>
         <div className="meta-nav__item meta-nav__item--highlight">
-          <a href="https://www.livingdocs.io/pssst" target="blank_" rel="noopener noreferrer">
+          <a
+            href="https://www.livingdocs.io/pssst"
+            target="blank_"
+            rel="noopener noreferrer"
+          >
             Subscribe
           </a>
         </div>
