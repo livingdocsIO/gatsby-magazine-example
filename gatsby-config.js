@@ -9,10 +9,6 @@ module.exports = {
       options: {
         // The accessToken is accessed at buildtime and set in netlify in this case
         accessToken: process.env.accessToken,
-        design: {
-          name: 'living-times',
-          version: '1.0.0'
-        },
         recursion: true
       }
     },

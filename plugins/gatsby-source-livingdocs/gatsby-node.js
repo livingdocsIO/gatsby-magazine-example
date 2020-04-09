@@ -10,10 +10,6 @@ const renderLayout = require('./includes/render')
 const resolveIncludes = require('./includes')
 
 exports.sourceNodes = async ({actions}, configOptions) => {
-  if (!configOptions.design) return console.warn('config.options.design missing')
-  if (!configOptions.design.name) { return console.warn("config.options.design.name missing example: 'living-times'") }
-  if (!configOptions.design.version) { return console.warn("config.options.design.version missing example: '0.0.1'") }
-
   const {createNode} = actions
 
   // Gatsby adds a configOption that's not needed for this plugin, delete it
@@ -25,8 +21,7 @@ exports.sourceNodes = async ({actions}, configOptions) => {
     accessToken: configOptions.accessToken
   })
 
-  const limit = configOptions.limit ? configOptions.limit : 10
-  const recursion = configOptions.recursion ? configOptions.limit : true
+  const limit = configOptions.limit ? configOptions.limit : 50
   const allPublications = []
 
   // As the livingdocs metadata can change, we set some defaults for the graphQL schema.
@@ -79,7 +74,7 @@ exports.sourceNodes = async ({actions}, configOptions) => {
       publication.systemdata.documentType === 'article' ||
       publication.systemdata.documentType === 'page'
     ) {
-      await resolveIncludes(livingdoc, liClient, includesConfig)
+      await resolveIncludes(livingdoc, liClient, includesConfig, design)
 
       const documentType = publication.systemdata.documentType
       const currentDocumentType = documentTypes && documentTypes[documentType]
@@ -118,6 +113,7 @@ exports.sourceNodes = async ({actions}, configOptions) => {
   }
 
   async function createNodes () {
+    const recursion = configOptions.recursion ? configOptions.recursion : true
     recursion ? await getAllPublicationsRecursively() : await getAllPublications()
     if (!allPublications.length) {
       console.warn(`
@@ -125,9 +121,11 @@ exports.sourceNodes = async ({actions}, configOptions) => {
       Are you sure you've added published documents to livingdocs?
       `)
     }
+    // service usecase - we assume all documents have the same design
+    // if that's not the case, feel free to customize this part.
     const design = await liClient.getDesign({
-      name: configOptions.design.name,
-      version: configOptions.design.version
+      name: allPublications[0].systemdata.design.name,
+      version: allPublications[0].systemdata.design.version
     })
     if (!design) console.warn('ALERT! livingdocs-gatsby-plugin: design could not be loaded')
 
