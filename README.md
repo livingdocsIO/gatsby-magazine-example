@@ -2,6 +2,9 @@
 
 This magazine-starter is supposed to help you start out with Livingdocs as a headless CMS.<br/> We assume you haven't set up any custom configuration and use our magazine-component library.
 
+This works setup will work well for small setups (100 - 5000 Articles/posts) or proof of concepts where you want to see results quickly.
+For a full fledged enterprise use case you can contact us.
+
 ## See it in action:
 
 [Gatsby-magazine example](https://magazine-example.livingdocs.io/)
